@@ -1,0 +1,43 @@
+
+
+
+
+
+	run sql -> docker run --name local-sql -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=abcDEF123#" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest
+	docker exec -it local-sql /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P abcDEF123#
+	docker exec -it local-sql /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P abcDEF123#
+	discover IP -> docker inspect -f "{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}" local-sql
+	connect outside container -> sqlcmd -S <ip_address>,1433 -U SA -P "<YourNewStrong@Passw0rd>"
+								sqlcmd -S 172.17.0.2,1433 -U SA -P "abcDEF123#"
+	
+	Create custom image
+	
+	- pasta com o docker file
+	- docker build -t <image name> <Folder>
+	
+	Running custom image
+	
+	- docker run -d -p 1433:1433 --name <docker name> <image name>
+	
+	
+	
+	References
+	https://medium.com/bright-days/basic-docker-image-dockerfile-sql-server-with-custom-prefill-db-script-8f12f197867a
+	https://adamtheautomator.com/docker-build-tag/
+	https://learn.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker?view=sql-server-linux-2017&pivots=cs1-bash#pullandrun2017
+	
+	
+	
+	
+	.net 7
+	
+	docker build -f "D:\Workspace\github\jenkins-ci\src\Jenkins.CI\Jenkins.CI\Dockerfile" --force-rm -t jenkinsciapp:dev --target base  --label "com.microsoft.created-by=visual-studio" --label "com.microsoft.visual-studio.project-name=Jenkins.CI.App" "D:\Workspace\github\jenkins-ci\src\Jenkins.CI" 
+	docker build -f "D:\Workspace\github\jenkins-ci\src\Jenkins.CI\Jenkins.CI\Dockerfile" --force-rm -t jenkins-ci --target base "D:\Workspace\github\jenkins-ci\src\Jenkins.CI" 
+	
+	docker run -d -p 8080:5000 --name jenkins-ci jenkinsciapp:dev
+	
+	docker run -p 8001:80 -d jenkins-ci
+	docker run -p 8001:80 -d jenkinsciapp:dev
+	
+	
+	
