@@ -1,0 +1,13 @@
+
+
+
+
+
+
+Aumentar memória docker
+1) wsl -d docker-desktop
+2) sysctl -w vm.max_map_count=262144
+
+
+
+	e378f35eabd51a38ce106b64f5d4c70515b7431f

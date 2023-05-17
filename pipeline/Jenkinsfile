@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        
+        stage ('Just test') {
+            steps {
+                bat 'echo inicio'
+            }
+        }
+        
+        stage ('Meio') {
+            steps {
+                bat 'echo meio'
+                sleep(5)
+            }
+        }
+        
+        stage ('Fim') {
+            steps {
+                bat 'echo fim'
+            }
+        }
+        
+    }
+}
