@@ -5,6 +5,7 @@
 
 
 Aumentar memória docker
+With powershell
 1) wsl -d docker-desktop
 2) sysctl -w vm.max_map_count=262144
 

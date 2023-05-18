@@ -19,10 +19,16 @@ pipeline {
             }
         }
 
-        stage ('Meio') {
+        stage ('Sonar analysis') {
+            
+            environment {
+                scannerHome = tool "SONAR_SCANNER"
+            }
+
             steps {
-                bat 'echo meio'
-                sleep(5)
+                withSonarQubeEnv('SONAR_LOCAL') {
+                    bat '${scannerHome}/bin/sonar-scanner -e -Dsonar.projectKey=JenkinsCICD -dsonar .host.url=http://localhost:90000 -Dsonar.login=e378f35eabd51a38ce106b64f5d4c70515b7431f -D .coverage.exclusions=**/ClientApp/**'
+                }
             }
         }
         
