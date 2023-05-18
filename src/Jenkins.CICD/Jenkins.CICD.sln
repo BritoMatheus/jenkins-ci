@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jenkins.CICD", "Jenkins.CICD\Jenkins.CICD.csproj", "{73E67D68-7046-4005-98E3-13E3D8376E59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jenkins.CICD", "Jenkins.CICD\Jenkins.CICD.csproj", "{73E67D68-7046-4005-98E3-13E3D8376E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jenkins.CICD.Test", "Jenkins.CICD.Test\Jenkins.CICD.Test.csproj", "{BB11C49B-DE4A-4697-934A-47DCEAB46412}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{73E67D68-7046-4005-98E3-13E3D8376E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E67D68-7046-4005-98E3-13E3D8376E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E67D68-7046-4005-98E3-13E3D8376E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB11C49B-DE4A-4697-934A-47DCEAB46412}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB11C49B-DE4A-4697-934A-47DCEAB46412}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB11C49B-DE4A-4697-934A-47DCEAB46412}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB11C49B-DE4A-4697-934A-47DCEAB46412}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

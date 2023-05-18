@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Jenkins.CICD/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.SpaProxy": "7.0.5",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.17.2"
+        },
+        "runtime": {
+          "Jenkins.CICD.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.SpaProxy/7.0.5": {
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.SpaProxy.dll": {
+            "assemblyVersion": "7.0.5.0",
+            "fileVersion": "7.0.523.17410"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.2": {}
+    }
+  },
+  "libraries": {
+    "Jenkins.CICD/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.SpaProxy/7.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WYLd7XrewukpPMbWzVEOE/rMI1Nu68euZfh3M31iilnpH5T78LX9Y5Yz87YOPdrwO3urzaN621RFqF9ZayDR6A==",
+      "path": "microsoft.aspnetcore.spaproxy/7.0.5",
+      "hashPath": "microsoft.aspnetcore.spaproxy.7.0.5.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.17.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5daNXm8Hb016oETmuHXiW8jclmRR9CzM7XrOh2htYhQ/7AAYtqntZ1MrZkh09+JTtdjYdGsy2XIMPe9cg83x5w==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.17.2",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.17.2.nupkg.sha512"
+    }
+  }
+}

@@ -5,13 +5,20 @@ pipeline {
         
         stage ('Build') {
             steps {
-                bat '
-                cd src\\Jenkins.CICD\\Jenkins.CICD
-                dotnet build
-                '
+                dir('src\\Jenkins.CICD\\Jenkins.CICD') {
+                    bat 'dotnet build '
+                }
             }
         }
-        
+
+        stage ('Test') {
+            steps {
+                dir('src\\Jenkins.CICD\\Jenkins.CICD.Test') {
+                    bat 'dotnet test '
+                }
+            }
+        }
+
         stage ('Meio') {
             steps {
                 bat 'echo meio'

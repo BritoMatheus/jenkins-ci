@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "http://localhost:44415",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "D:\\Workspace\\github\\jenkins-ci\\src\\Jenkins.CICD\\Jenkins.CICD\\ClientApp\\",
+"MaxTimeoutInSeconds": "120"
+}
+}
