@@ -27,7 +27,15 @@ pipeline {
 
             steps {
                 withSonarQubeEnv('SONAR_LOCAL') {
-                    bat '${scannerHome}/bin/sonar-scanner -e -Dsonar.projectKey=JenkinsCICD -dsonar .host.url=http://localhost:90000 -Dsonar.login=e378f35eabd51a38ce106b64f5d4c70515b7431f -D .coverage.exclusions=**/ClientApp/**'
+                    serviceName = "JenkinsCICD"
+                    sonarToken = "e378f35eabd51a38ce106b64f5d4c70515b7431f"
+                    exclusions = "**/ClientApp/**"
+
+                    dir('src\\Jenkins.CICD') {
+                        bat "dotnet sonarscanner begin /k:${serviceName} /d:sonar.login=${sonarToken} /d:sonar.exclusions=${exclusions} "
+                        bat "dotnet build"
+                        bat "dotnet sonarscanner end /d:sonar.login=${sonarToken}"
+                    }
                 }
             }
         }
