@@ -28,16 +28,17 @@ pipeline {
                 sonarToken = "e378f35eabd51a38ce106b64f5d4c70515b7431f"
                 exclusions = "**/ClientApp/**"
                 coverageResult = "Jenkins.CICD.Test\\TestResults\\**\\coverage.cobertura.xml"
+                coverageReportPaths = ".\\sonarqubecoverage\\SonarQube.xml"
             }
 
             steps {
                 withSonarQubeEnv('MyLocalSonar') {
 
                     dir('src\\Jenkins.CICD') {
-                        bat "dotnet sonarscanner begin /k:${serviceName} /d:sonar.login=${sonarToken} /d:sonar.exclusions=${exclusions} /d:sonar.cs.vscoveragexml.reportsPaths=${coverageResult}"
+                        bat "dotnet sonarscanner begin /k:${serviceName} /d:sonar.login=${sonarToken} /d:sonar.exclusions=${exclusions} /d:sonar.coverageReportPaths=${coverageReportPaths}"
                         bat "dotnet build"
                         bat 'dotnet test --collect:"XPlat Code Coverage"'
-                        // bat "dotnet-coverage collect 'dotnet test' -f xml -r -o 'Tests\\CodeCoverage\\cobertura.xml'"
+                        bat "reportgenerator \"-reports:*\\TestResults\\*\\coverage.cobertura.xml\" \"-targetdir:sonarqubecoverage\" \"-reporttypes:SonarQube\" "
                         bat "dotnet sonarscanner end /d:sonar.login=${sonarToken}"
                     }
                 }

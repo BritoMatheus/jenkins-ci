@@ -1,0 +1,2 @@
+dotnet tool install --global dotnet-sonarscanner 
+dotnet tool update dotnet-reportgenerator-globaltool -g 
